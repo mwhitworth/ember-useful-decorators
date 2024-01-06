@@ -5,9 +5,9 @@
   "keywords": [
     "ember-addon"
   ],
-  "repository": "",
+  "repository": "https://github.com/mwhitworth/ember-useful-decorators.git",
   "license": "MIT",
-  "author": "",
+  "author": "Matthew Whitworth <mwhitworth@gmail.com>",
   "typesVersions": {
     "*": {
       "test-support": [
@@ -40,6 +40,7 @@
     "lint:types": "tsc --noEmit",
     "prepack": "tsc --project tsconfig.declarations.json",
     "postpack": "rimraf declarations",
+    "release": "release-it",
     "start": "ember serve",
     "test": "concurrently \"npm:lint\" \"npm:test:*\" --names \"lint,test:\"",
     "test:ember": "ember test",
@@ -111,6 +112,7 @@
     "prettier": "^3.1.1",
     "qunit": "^2.20.0",
     "qunit-dom": "^2.0.0",
+    "release-it": "^17.0.1",
     "rimraf": "^5.0.1",
     "stylelint": "^15.11.0",
     "stylelint-config-standard": "^34.0.0",
@@ -129,5 +131,10 @@
   },
   "ember-addon": {
     "configPath": "tests/dummy/config"
+  },
+  "release-it": {
+    "github": {
+      "release": true
+    }
   }
 }
