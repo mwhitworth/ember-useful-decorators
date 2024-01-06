@@ -1,4 +1,7 @@
 import {
+  memoizeByOutput,
+} from './utils/memoize-by-output';
+import {
   once,
   scheduleOnce,
   next,
@@ -6,6 +9,7 @@ import {
 } from './utils/runloop';
 
 export {
+  memoizeByOutput,
   once,
   scheduleOnce,
   next,

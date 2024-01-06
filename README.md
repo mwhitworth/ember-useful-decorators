@@ -38,6 +38,12 @@ Invoke the decorated function with [next](https://api.emberjs.com/ember/5.5/func
 
 Invoke the decorated function with [run](https://api.emberjs.com/ember/5.5/functions/@ember%2Frunloop/run)
 
+### Caching
+
+#### @memoizeByOutput(equalityFunc?: (a: any, b: any) => boolean)
+
+Cache output values to avoid excessive dirtying of complex return values (e.g. objects). `equalityFunc` defaults to a shallow object comparison function if not provided.
+
 ## Contributing
 
 See the [Contributing](CONTRIBUTING.md) guide for details.
