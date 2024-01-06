@@ -1,7 +1,6 @@
 # ember-useful-decorators
 
-[Short description of the addon.]
-
+A collection of useful decorators concerning functionality that is specific to Ember.
 
 ## Compatibility
 
@@ -19,8 +18,25 @@ ember install ember-useful-decorators
 
 ## Usage
 
-[Longer description of how to use the addon in apps.]
+Each decorator is described below:
 
+### Runloop functions
+
+#### @once
+
+Invoke the decorated function with [once](https://api.emberjs.com/ember/release/functions/@ember%2Frunloop/once)
+
+#### @scheduleOnce(queue)
+
+Invoke the decorated function with [scheduleOnce](https://api.emberjs.com/ember/5.5/functions/@ember%2Frunloop/scheduleOnce), against the given queue `queue`.
+
+#### @next
+
+Invoke the decorated function with [next](https://api.emberjs.com/ember/5.5/functions/@ember%2Frunloop/next)
+
+#### @run
+
+Invoke the decorated function with [run](https://api.emberjs.com/ember/5.5/functions/@ember%2Frunloop/run)
 
 ## Contributing
 
