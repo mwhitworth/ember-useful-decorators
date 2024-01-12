@@ -38,15 +38,23 @@ Invoke the decorated function with [next](https://api.emberjs.com/ember/5.5/func
 
 Invoke the decorated function with [run](https://api.emberjs.com/ember/5.5/functions/@ember%2Frunloop/run)
 
-### Caching
+### Caching and performance
 
 #### @memoizeByOutput(equalityFunc?: (a: any, b: any) => boolean)
 
 Cache output values to avoid excessive dirtying of complex return values (e.g. objects). `equalityFunc` defaults to a shallow object comparison function if not provided.
 
-### @readOnly(path) decorator
+### @readOnly(path)
 
 Alias other (nested) properties using the usual syntax, but avoiding the computed logic in Ember's `@readOnly` decorator.
+
+### @readOnce(path)
+
+Read the value at path and make it a constant, avoiding the computed logic in Ember's `@readOnce` decorator
+
+### @constant
+
+Calculate the getter value once and store the result
 
 ## Contributing
 
