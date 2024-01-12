@@ -44,6 +44,10 @@ Invoke the decorated function with [run](https://api.emberjs.com/ember/5.5/funct
 
 Cache output values to avoid excessive dirtying of complex return values (e.g. objects). `equalityFunc` defaults to a shallow object comparison function if not provided.
 
+### @readOnly(path) decorator
+
+Alias other (nested) properties using the usual syntax, but avoiding the computed logic in Ember's `@readOnly` decorator.
+
 ## Contributing
 
 See the [Contributing](CONTRIBUTING.md) guide for details.
