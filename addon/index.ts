@@ -2,6 +2,8 @@ import {
   memoizeByOutput,
 } from './utils/memoize-by-output';
 import {
+  constant,
+  readOnce,
   readOnly,
 } from './utils/read-only';
 import {
@@ -13,6 +15,9 @@ import {
 
 export {
   memoizeByOutput,
+  constant,
+  readOnce,
+  readOnly,
   once,
   scheduleOnce,
   next,
