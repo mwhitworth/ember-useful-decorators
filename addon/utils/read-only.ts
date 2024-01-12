@@ -11,7 +11,7 @@ function getFromPathParts(target: any, parts: string[]): any {
 
 export function readOnly(path: string): PropertyDecorator {
   const pathParts = path.split('.');
-  return (_target: any, _propertyKey: string, desc?: any) => {
+  return (_target: any, _propertyKey: string | symbol, desc?: any) => {
     return {
       enumerable: desc.enumerable,
       configurable: desc.configurable,
@@ -23,7 +23,7 @@ export function readOnly(path: string): PropertyDecorator {
 }
 
 export function readOnce(path: string): PropertyDecorator {
-  return (_target: any, key: string, desc?: any) => {
+  return (_target: any, key: string | symbol, desc?: any) => {
     return {
       enumerable: desc.enumerable,
       configurable: desc.configurable,
@@ -69,17 +69,23 @@ export const constant = (
 // Hence, the tags created on the initial read are discarded.
 
 let rereadScheduled = false;
-let rereadTrigger = tracked({ value: true });
+
+class RereadTracker {
+  @tracked
+  rereadTrigger = true;
+}
+
+const rereadTracker = new RereadTracker();
 
 function triggerReread(target: any): void {
-  if (rereadTrigger) {
+  if (rereadTracker.rereadTrigger) {
     // By testing (consuming) rereadTrigger in the "if" condition, Glimmer now considers it part of the calculation of
     // the property we want to force Glimmer to reread after we make it a constant property
     if (!rereadScheduled) {
       next(null, () => {
         // At this point the "constant" property has been rewritten as a constant value
         // Dirty the "trigger" to tell Glimmer to reread the constant.
-        rereadTrigger = true;
+        rereadTracker.rereadTrigger = true;
         rereadScheduled = false;
       });
       rereadScheduled = true;
