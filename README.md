@@ -44,17 +44,17 @@ Invoke the decorated function with [run](https://api.emberjs.com/ember/5.5/funct
 
 Cache output values to avoid excessive dirtying of complex return values (e.g. objects). `equalityFunc` defaults to a shallow object comparison function if not provided.
 
-### @readOnly(path)
+#### @readOnly(path)
 
 Alias other (nested) properties using the usual syntax, but avoiding the computed logic in Ember's `@readOnly` decorator.
 
-### @readOnce(path)
+#### @readOnce(path)
 
-Read the value at path and make it a constant, avoiding the computed logic in Ember's `@readOnce` decorator
+Read the value at path and make it a constant, avoiding the computed logic in Ember's `@readOnce` decorator.
 
-### @constant
+#### @constant
 
-Calculate the getter value once and store the result
+Calculate the getter value once and store the result, avoiding the computed logic in Ember's `@computed` decorator.
 
 ## Contributing
 
